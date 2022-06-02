@@ -1,38 +1,85 @@
-# Starkgate - StarkNet L1 Bridges
+## StarkNet, Node Kurulum Kılavuzu Türkçe Çeviri.
 
-## Overview
+(İngilizceden çevrilmiştir, alıntıdır)
 
-This repository contains the Cairo and Solidity code for the L1<>L2 bridges of StarkNet,
-as well as StarkNet's ERC20 token contract implementation that interacts with the bridges.
-You can read the documentation of the bridges [here](https://starknet.io/documentation/starkgate-token-bridge/)
-and the documentation of the general L1<>StarkNet messaging system [here](https://starknet.io/documentation/l1-l2-messaging/).
+# Öncelikle bir Alchemy hesabı oluşturuyoruz.
 
-You can find the L1 addresses and L2 addresses for the deployed bridges on StarkNet Alpha on Goerli and on Mainnet [here](https://github.com/starkware-libs/starknet-addresses).
+Starknet'i çalıştırmak için Alchemy hizmeti tarafından sağlanan düğümleri kullanacağız, bu nedenle [alchemy.com](https://www.alchemy.com/)'a kaydolun ve kişisel hesabınızda endpointler oluşturalım.
 
-Note: The frontend of the bridges, can be found [here](https://github.com/starkware-libs/starkgate-frontend).
+# Sırasıyla görseller:
 
-If you are not familiar with Cairo, you can find more details about it [here](https://www.cairo-lang.org/).
+![image](https://user-images.githubusercontent.com/101149671/171650488-9846b8e5-d76d-43a7-a256-402cba2e0f8a.png)
 
-## Main module
+![image](https://user-images.githubusercontent.com/101149671/171650517-7b22a87e-fff5-4704-b38b-1464f82e83f2.png)
 
-**src/starkware/starknet/apps/starkgate**:
-The Cairo and Solidity contracts of the bridge, StarkNet's ERC20 token contract and corresponding tests.
+![image](https://user-images.githubusercontent.com/101149671/171650593-c63e40b7-71c3-4c14-8a69-daf26a066677.png)
 
-## Running the tests
+![image](https://user-images.githubusercontent.com/101149671/171650619-a0527993-19ec-4ce0-a674-033b68da1cea.png)
 
-The root directory holds a dedicated Dockerfile, which automatically builds the project and runs
-the unit tests.
-You should have docker installed (see https://docs.docker.com/get-docker/).
+![image](https://user-images.githubusercontent.com/101149671/171650653-8eb80d02-d369-4602-9770-cd0d17fa8a06.png)
 
-Build the docker image:
 
-```bash
-> docker build --tag starkgate .
+Görsellerde gösterdiğim şekilde hesabı oluşturun ve adresi kopyalayın.
+
+# KURULUM:
+
+```
+ALCHEMY=YOUR_ALCHEMY_HTTP_ADDRESS
+echo 'export ALCHEMY='$ALCHEMY >> $HOME/.bash_profile
 ```
 
-Alternatively, you can build the project and run the tests:
-```bash
-> ./build.sh
-> cd build/Release
-> ctest -V
+YOUR_ALCHEMY_HTTP_ADDRESS kısmına az önce alchemy üzerinden kopyaladığımız adresi girelim.
+
+# Hızlı kurulum için script:
+
 ```
+wget -O starknet.sh https://api.nodes.guru/starknet.sh && chmod +x starknet.sh && ./starknet.sh
+```
+
+# Logları takip etmek için:
+
+```
+journalctl -u starknetd -f
+```
+
+# Node restart atmak için:
+```
+systemctl restart starknetd
+```
+
+# Node silmek için:
+```
+systemctl stop starknetd
+systemctl disable starknetd
+rm -rf ~/pathfinder/
+rm -rf /etc/systemd/system/starknetd.service
+rm -rf /usr/local/bin/pathfinder
+```
+
+# İşlemler bu kadar, teşekkürler.
+```
+https://t.me/RuesAnnouncement
+https://t.me/RuesChat
+https://t.me/RuesNode
+https://t.me/RuesNodeChat
+https://forum.rues.info/
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
