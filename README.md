@@ -21,6 +21,7 @@ Starknet'i çalıştırmak için Alchemy hizmeti tarafından sağlanan düğüml
 
 Görsellerde gösterdiğim şekilde hesabı oluşturun ve adresi kopyalayın.
 
+
 # KURULUM:
 
 ```
